@@ -7,31 +7,29 @@ Set Pre Conditions
     Maximize Browser Window
     Wait Until Element Is Visible  ${Element}
 
+Mouse Over And Click
+    [Arguments]  ${Element}
+    Element Should Be Visible  ${Element}
+    Set Focus To Element  ${Element}
+    Mouse Over  ${Element}
+    Click Element  ${Element}
+
 Click Link And Check URL
     [Arguments]  ${Link}  ${URLToCheck}
-    Element Should Be Visible  ${Link}
-    Set Focus To Element  ${Link}
-    Mouse Over  ${Link}
-    Click Element  ${Link}
+    Mouse Over And Click  ${Link}
     Wait Until Location Is  ${URLToCheck}
     Log Location
 
 Click Blank Link And Check URL
     [Arguments]  ${Link}  ${URLToCheck}
-    Element Should Be Visible  ${Link}
-    Set Focus To Element  ${Link}
-    Mouse Over  ${Link}
-    Click Element  ${Link}
+    Mouse Over And Click  ${Link}
     Switch Window  new
     Wait Until Location Is  ${URLToCheck}
     Log Location
 
 Click And Check No Visible
     [Arguments]  ${Button}  ${ElementToCheck}
-    Element Should Be Visible  ${Button}
-    Set Focus To Element  ${Button}
-    Mouse Over  ${Button}
-    Click Element  ${Button}
+    Mouse Over And Click  ${Button}
     Wait Until Element Is Not Visible  ${ElementToCheck}
 
 Compare Text

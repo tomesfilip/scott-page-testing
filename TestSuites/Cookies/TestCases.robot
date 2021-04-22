@@ -13,13 +13,13 @@ Pre-conditions
     Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Img_Scott_Logo}
 
 *** Test Cases ***
-TC_001 - Test Accept Cookies
+TC_C001 - Test Accept Cookies
     Wait Until Element Is Visible  ${Cookies_Modal}
     Element Should Be Visible  ${Button_Close_Cookies_Modal}
     Click And Check No Visible  ${Button_Close_Cookies_Modal}  ${Cookies_Modal}
     Perform Post Conditions  1
 
-TC_OO2 - Test More Info Cookies
+TC_COO2 - Test More Info Cookies
     Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Img_Scott_Logo}
     Wait Until Element Is Visible  ${Cookies_Modal}
     Element Should Be Visible  ${Link_Cookies_More_Info}
