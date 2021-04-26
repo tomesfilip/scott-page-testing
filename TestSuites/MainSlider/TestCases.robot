@@ -60,5 +60,6 @@ TC_MS003 - Slider Dots
     ${dot_third}=  Get ELement Attribute  ${Dot_Slider_Third}  class
     Should Be Equal  ${dot_third}  owl-dot active
 
+
 Post-conditions
     Perform Post Conditions  2

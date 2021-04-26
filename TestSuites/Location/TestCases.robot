@@ -12,7 +12,7 @@ Pre-conditions
     Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Img_Scott_Logo}
 
 *** Test Cases ***
-TC_M001
+TC_L001 - Change Continent Tabs
     Wait Until Element Is Visible  ${Img_Scott_Logo}
     Click Link And Check URL  ${Link_Selected_Country_Flag}  ${URL_Scott_Country}
     Wait Until Element Is Visible  ${Country_Headline}
@@ -24,7 +24,7 @@ TC_M001
     Compare Text  ${Link_First_Visible_Contry}  China
     Reload Page
 
-TC_M002
+TC_L002 - Change Page Localization
     Wait Until Element Is Visible  ${Country_Headline}
     Compare Text  ${Selected_Tab}  EUROPE
     Click Link And Check URL  ${Link_Country_Czech}  ${URL_Scott_Czech}

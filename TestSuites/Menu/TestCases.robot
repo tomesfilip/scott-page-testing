@@ -13,43 +13,43 @@ Pre-conditions
 
 *** Test Cases ***
 TC_M001
-    Wait Until Element Is Visible  ${MenuSearchBoxSubmit}
-    Mouse Over And Click  ${MagnifierIcon}
-    Wait Until Element Is Visible  ${CrossIcon}
-    Element Should Be Visible  ${CrossIcon}
-    Element Attribute Value Should Be  ${SearchBoxInput}  placeholder  I'm looking for
+    Wait Until Element Is Visible  ${Menu_Search_Box_Submit}
+    Mouse Over And Click  ${Magnifier_Icon}
+    Wait Until Element Is Visible  ${Cross_Icon}
+    Element Should Be Visible  ${Cross_Icon}
+    Element Attribute Value Should Be  ${Search_Box_Input}  placeholder  I'm looking for
 
 TC_M002
-    Mouse Over And Click  ${CrossIcon}
-    Wait Until Element Is Visible  ${MagnifierIcon}
-    Element Should Not Be Visible  ${CrossIcon}
+    Mouse Over And Click  ${Cross_Icon}
+    Wait Until Element Is Visible  ${Magnifier_Icon}
+    Element Should Not Be Visible  ${Cross_Icon}
 
 TC_M003
-    Mouse Over And Click  ${MagnifierIcon}
-    Input Text  ${SearchBoxInput}  glo
-    Wait Until Element Is Visible  ${AutocompleteDropdown}
-    Element Should Be Visible  ${AutocompleteItem}
-    Clear Element Text  ${SearchBoxInput}
-    Mouse Over And Click  ${CrossIcon}
+    Mouse Over And Click  ${Magnifier_Icon}
+    Input Text  ${Search_Box_Input}  glo
+    Wait Until Element Is Visible  ${Autocomplete_Dropdown}
+    Element Should Be Visible  ${Autocomplete_Item}
+    Clear Element Text  ${Search_Box_Input}
+    Mouse Over And Click  ${Cross_Icon}
 
 
 TC_M004
-    Mouse Over And Click  ${MagnifierIcon}
-    Input Text  ${SearchBoxInput}  olg
+    Mouse Over And Click  ${Magnifier_Icon}
+    Input Text  ${Search_Box_Input}  olg
     Sleep  2
-    Element Should Not Be Visible  ${AutocompleteDropdown}
-    Element Should Not Be Visible  ${AutocompleteItem}
-    Clear Element Text  ${SearchBoxInput}
-    Mouse Over And Click  ${CrossIcon}
+    Element Should Not Be Visible  ${Autocomplete_Dropdown}
+    Element Should Not Be Visible  ${Autocomplete_Item}
+    Clear Element Text  ${Search_Box_Input}
+    Mouse Over And Click  ${Cross_Icon}
 
 TC_M005
-    Element Should Be Visible  ${BikeMenuOption}
-    Mouse Over  ${BikeMenuOption}
-    Wait Until Element Is Visible  ${BikeSubMenuBikesLink}
-    Element Should Be Visible  ${BikeSubMenuBikesLink}
+    Element Should Be Visible  ${Bike_Menu_Option}
+    Mouse Over  ${Bike_Menu_Option}
+    Wait Until Element Is Visible  ${Bike_Sub_Menu_Bikes_Link}
+    Element Should Be Visible  ${Bike_Sub_Menu_Bikes_Link}
     Mouse Over  ${Img_Scott_Logo}
     Sleep  1
-    Element Should Not Be Visible  ${BikeSubMenuBikesLink}
+    Element Should Not Be Visible  ${Bike_Sub_Menu_Bikes_Link}
 
 Post-conditions
     Perform Post Conditions  2

@@ -19,34 +19,30 @@ TC_H001 - Open Help Sub Page
     Compare Text  ${Headline_Help}  HOW CAN WE HELP YOU?
 
 TC_HOO2 - Test Whisperer Valid Phrase
-    Mouse Over And Click  ${Input_Search_Box}
-    Input Text  ${Input_Search_Box}  how
-    Wait Until Element Is Visible  ${AutoComplete}
-    Element Should Be Visible  ${AutoCompleteOption}
+    Type Text To Input  ${Input_Search_Box}  how
+    Wait Until Element Is Visible  ${Auto_Complete}
+    Element Should Be Visible  ${Auto_Complete_Option}
     Clear Element Text  ${Input_Search_Box}
 
 TC_H003 - Test Whisperer Invalid Phrase
-    Mouse Over And Click  ${Input_Search_Box}
-    Input Text  ${Input_Search_Box}  brm
+    Type Text To Input  ${Input_Search_Box}  brm
     Sleep  2
-    Element Should Not Be Visible  ${AutoComplete}
+    Element Should Not Be Visible  ${Auto_Complete}
     Clear Element Text  ${Input_Search_Box}
 
 TC_H004 - Test Search Valid Results
-    Mouse Over And Click  ${Input_Search_Box}
-    Input Text  ${Input_Search_Box}  what
+    Type Text To Input  ${Input_Search_Box}  what
     Press Keys  ${Input_Search_Box}  ENTER
-    Wait Until Element Is Visible  ${SearchResutlsTitle}
-    Compare Text  ${SearchResutlsTitle}  63 RESULTS FOR "WHAT"
-    Compare Text  ${FirstResultTitle}  What is AeroFoam?
+    Wait Until Element Is Visible  ${Search_Resutls_Title}
+    Compare Text  ${Search_Resutls_Title}  63 RESULTS FOR "WHAT"
+    Compare Text  ${First_Result_Title}  What is AeroFoam?
     Clear Element Text  ${Input_Search_Box}
 
 TC_H005 - Test Search Invalid Results
-    Mouse Over And Click  ${Input_Search_Box}
-    Input Text  ${Input_Search_Box}  jkl
+    Type Text To Input  ${Input_Search_Box}  jkl
     Press Keys  ${Input_Search_Box}  ENTER
-    Wait Until Element Is Visible  ${NoResultsParagraph}
-    Compare Text  ${NoResultsParagraph}  We couldn't find any results for : "query"
+    Wait Until Element Is Visible  ${No_Results_Paragraph}
+    Compare Text  ${No_Results_Paragraph}  We couldn't find any results for : "query"
     Clear Element Text  ${Input_Search_Box}
 
 Post-conditions

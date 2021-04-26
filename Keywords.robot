@@ -37,6 +37,31 @@ Compare Text
     ${Element_Text}  Get Text  ${Element}
     Should Be Equal As Strings  ${Element_Text}  ${ExpectedElementText}
 
+Type Text To Input
+    [Arguments]  ${InputBox}  ${Text}
+    Element Should Be Visible  ${InputBox}
+    Mouse Over And Click  ${InputBox}
+    Input Text  ${InputBox}  ${Text}
+
+Get CSS Property Value
+    [Arguments]  ${Element}  ${AttrName}
+    ${css}=  Get WebElement  ${Element}
+    ${prop_val}=  Call Method  ${css}  value_of_css_property  ${AttrName}
+    [Return]  ${prop_val}
+
+Check Hover Styling
+    [Arguments]  ${Element}  ${ElementToMove}  ${AttrName}  ${ExpectedStyleValue}
+    Element Should Be Visible  ${Element}
+    Mouse Over  ${Element}
+    ${style}=  Get CSS Property Value  ${Element}  ${AttrName}
+    Sleep  1
+    Should Be Equal  ${style}  ${ExpectedStyleValue}
+    Mouse Over  ${ElementToMove}
+    Sleep  1
+    ${style}=  Get CSS Property Value  ${Element}  ${AttrName}
+    Should Not Be Equal  ${style}  ${ExpectedStyleValue}
+
+
 Perform Post Conditions
     [Arguments]  ${SleepValue}
     Sleep  ${SleepValue}

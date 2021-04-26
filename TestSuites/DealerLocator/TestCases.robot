@@ -13,7 +13,7 @@ Pre-conditions
     Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Dealer_Locator}  ${Img_Scott_Logo}
 
 *** Test Cases ***
-TC_DL002
+TC_DL002 - Dealer Locator Select Category
     Compare Text  ${Headline_Category_Running}  RUNNING
     Mouse Over And Click  ${Headline_Category_Running}
     Wait Until Element Is Visible  ${Button_Form_Submit}
@@ -25,7 +25,7 @@ TC_DL002
     Element Should Be Visible  ${Option_Mi}
 
 
-TC_DL003
+TC_DL003 - Dealer Locator Location Form
     Element Should Be Disabled  ${Button_Form_Submit}
     Type Text To Input  ${Input_Define_Location}  Zlín
     Wait Until Element Is Visible  ${List_Suggestions}
