@@ -34,8 +34,20 @@ Click And Check No Visible
 
 Compare Text
     [Arguments]  ${Element}  ${ExpectedElementText}
-    ${Element_Text}  Get Text  ${Element}
+    Element Should Be Visible  ${Element}
+    ${Element_Text}=  Get Text  ${Element}
     Should Be Equal As Strings  ${Element_Text}  ${ExpectedElementText}
+
+Compare Input Text
+    [Arguments]  ${InputElement}  ${ExpectedText}
+    Element Should Be Visible  ${InputElement}
+    ${InputElementText}=  Get Value  ${InputElement}
+    Should Be Equal As Strings  ${InputElementText}  ${ExpectedText}
+
+Select Value From List And Verify
+    [Arguments]  ${List}  ${Value}
+    Select From List By Value  ${List}  ${Value}
+    List Selection Should Be  ${List}  ${Value}
 
 Type Text To Input
     [Arguments]  ${InputBox}  ${Text}
