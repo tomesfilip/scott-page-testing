@@ -34,7 +34,7 @@ Click And Check No Visible
 
 Compare Text
     [Arguments]  ${Element}  ${ExpectedElementText}
-    Element Should Be Visible  ${Element}
+    Wait Until Element Is Visible  ${Element}
     ${Element_Text}=  Get Text  ${Element}
     Should Be Equal As Strings  ${Element_Text}  ${ExpectedElementText}
 

@@ -51,7 +51,7 @@ TC_N005 - Newsletter Select Country Uniqueness
     List Should Not Contain Duplicates  ${country_options}
 
 TC_N008 - Newsletter Submit Form With Invalid Mail
-    Type Text To Input  ${Input_Email_Newsletter}  invalidmail@gmail.!
+    Type Text To Input  ${Input_Email_Newsletter}  johnsmith@gmail.!
     Type Text To Input  ${Input_First_Name_Newsletter}  John
     Type Text To Input  ${Input_Last_Name_Newsletter}  Smith
     Mouse Over And Click  ${Label_Agreement_Accept}

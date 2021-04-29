@@ -8,3 +8,4 @@ ${URL_Scott_Czech}  https://www.scott-sports.com/cz/cs/
 ${URL_Scott_Dealer_Locator}  https://www.scott-sports.com/global/en/dealers/locator
 ${URL_Scott_Wintersports}  https://www.scott-sports.com/global/en/sports/wintersports
 ${URL_Scott_Newsletter}  https://www.scott-sports.com/global/en/company/newsletter
+${URL_Scott_Manuals_Bike}  https://www.scott-sports.com/global/en/manuals-bike
