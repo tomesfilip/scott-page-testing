@@ -1,7 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library  Collections
-Library  Dialogs
 Library  SeleniumLibrary  run_on_failure=Nothing
 Resource  ../../Keywords.robot
 Resource  ../../URLs.robot
@@ -56,11 +55,11 @@ TC_PM006 - Bike Manuals Menu
     Select Frame  ${Frame_Bike_Manuals_SCOTT}
     Compare Text  ${Link_2020_Scott_Bike_Manuals}  2020 Bike Manuals | SCOTT Bike
     Mouse Over And Click  ${Link_2020_Scott_Bike_Manuals}
-    Compare Text  ${Link_Spark}  spark
+    Compare Text  ${Link_Spark}  Spark
     Mouse Over And Click  ${Link_Spark}
-    Should Be True  ${List_PDF_Items}==6
-#    List Should Contain Value  ${}  spark_Manual_A5_2018_BIKE_SCOTT-Sports_EN.pdf
-
+    ${PDF_count}=  Get Element Count  ${List_PDF_Items}
+    Should Be True  ${PDF_count}==6
+    Compare Text  ${Text_PDF_Name}  spark_Manual_A5_2018_BIKE_SCOTT-Sports_EN.pdf
 
 Post-conditions
     Perform Post Conditions  2

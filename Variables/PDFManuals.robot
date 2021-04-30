@@ -19,3 +19,4 @@ ${Options_File_Category}  //ul[@id="ui-select-choices-3"]/li
 ${Option_File_Category_First}  //ul[@id="ui-select-choices-3"]/li[@id="ui-select-choices-row-3-0"]
 ${Link_Spark}  //span[text()="Spark"]
 ${Link_2020_Scott_Bike_Manuals}  //span[text()="2020 Bike Manuals | SCOTT Bike"]
+${Text_PDF_Name}  //div[@class="name ng-binding"][2]
