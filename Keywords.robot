@@ -80,6 +80,19 @@ Check Hover Styling
     ${style}=  Get CSS Property Value  ${Element}  ${AttrName}
     Should Not Be Equal  ${style}  ${ExpectedStyleValue}
 
+Fill Contact Form Inputs
+    [Arguments]  ${InputFName}  ${FName}  ${InputLName}  ${LName}  ${InputEmail}  ${Email}  ${TextareaMsg}  ${Msg}
+    Type Text To Input  ${InputFName}  ${FName}
+    Type Text To Input  ${InputLName}  ${LName}
+    Type Text To Input  ${InputEmail}  ${Email}
+    Type Text To Input  ${TextareaMsg}  ${Msg}
+
+Select Options Contact Form Selects By Index
+    [Arguments]  ${SelectGender}  ${SelectCountry}  ${SelectType}  ${SelectDivision}  ${Index}
+    Select From List By Index  ${SelectGender}  ${Index}
+    Select From List By Index  ${SelectCountry}  ${Index}
+    Select From List By Index  ${SelectType}  ${Index}
+    Select From List By Index  ${SelectDivision}  ${Index}
 
 Perform Post Conditions
     [Arguments]  ${SleepValue}
