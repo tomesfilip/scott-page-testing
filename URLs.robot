@@ -10,3 +10,4 @@ ${URL_Scott_Wintersports}  https://www.scott-sports.com/global/en/sports/winters
 ${URL_Scott_Newsletter}  https://www.scott-sports.com/global/en/company/newsletter
 ${URL_Scott_Manuals_Bike}  https://www.scott-sports.com/global/en/manuals-bike
 ${URL_Scott_Contact}  https://www.scott-sports.com/global/en/company/contact
+${URL_Scott_History}  https://www.scott-sports.com/global/en/page/history
