@@ -94,6 +94,11 @@ Select Options Contact Form Selects By Index
     Select From List By Index  ${SelectType}  ${Index}
     Select From List By Index  ${SelectDivision}  ${Index}
 
+Choose An Option From Dropdown
+    [Arguments]  ${Dropdown}  ${Option}
+    Mouse Over And Click  ${Dropdown}
+    Mouse Over And Click  ${Option}
+
 Perform Post Conditions
     [Arguments]  ${SleepValue}
     Sleep  ${SleepValue}

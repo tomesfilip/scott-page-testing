@@ -11,3 +11,5 @@ ${URL_Scott_Newsletter}  https://www.scott-sports.com/global/en/company/newslett
 ${URL_Scott_Manuals_Bike}  https://www.scott-sports.com/global/en/manuals-bike
 ${URL_Scott_Contact}  https://www.scott-sports.com/global/en/company/contact
 ${URL_Scott_History}  https://www.scott-sports.com/global/en/page/history
+${URL_Scott_Mountain_Bikes_Categories}  https://www.scott-sports.com/global/en/products/bike-bikes-mountain
+${URL_Scott_Trail_Bikes_Products}  https://www.scott-sports.com/global/en/products/bike-bikes-mountain-trail
