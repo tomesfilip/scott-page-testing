@@ -40,18 +40,19 @@ Compare Text
 
 Compare Input Text
     [Arguments]  ${InputElement}  ${ExpectedText}
-    Element Should Be Visible  ${InputElement}
+    Wait Until Element Is Visible  ${InputElement}
     ${InputElementText}=  Get Value  ${InputElement}
     Should Be Equal As Strings  ${InputElementText}  ${ExpectedText}
 
 Select Value From List And Verify
     [Arguments]  ${List}  ${Value}
+    Wait Until Element Is Visible  ${List}
     Select From List By Value  ${List}  ${Value}
     List Selection Should Be  ${List}  ${Value}
 
 Type Text To Input
     [Arguments]  ${InputBox}  ${Text}
-    Element Should Be Visible  ${InputBox}
+    Wait Until Element Is Visible  ${InputBox}
     Mouse Over And Click  ${InputBox}
     Input Text  ${InputBox}  ${Text}
 
@@ -61,9 +62,15 @@ Get CSS Property Value
     ${prop_val}=  Call Method  ${css}  value_of_css_property  ${AttrName}
     [Return]  ${prop_val}
 
+Check Styling
+    [Arguments]  ${Element}  ${AttrName}  ${ExpectedStyleValue}
+    Wait Until Element Is Visible  ${Element}
+    ${style}=  Get CSS Property Value  ${Element}  ${AttrName}
+    Should Be Equal  ${style}  ${ExpectedStyleValue}
+
 Check Hover Styling
     [Arguments]  ${Element}  ${ElementToMove}  ${AttrName}  ${ExpectedStyleValue}
-    Element Should Be Visible  ${Element}
+    Wait Until Element Is Visible  ${Element}
     Mouse Over  ${Element}
     ${style}=  Get CSS Property Value  ${Element}  ${AttrName}
     Sleep  1
