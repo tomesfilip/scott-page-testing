@@ -8,5 +8,3 @@ ${Autocomplete_Dropdown}  //ul[contains(@class, "autocomplete")]
 ${Autocomplete_Item}  //li[contains(@class, "product")][1]
 ${Bike_Menu_Option}  //nav[@id="menu"]/ul/li[1]
 ${Bike_Sub_Menu_Bikes_Link}  //a[@id="navLevel-1.1"]
-
-

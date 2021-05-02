@@ -25,6 +25,7 @@ TC_Hi002 - Timeline Arrow
     Element Should Not Be Visible  ${First_Timeline_First_Year}
     Element Should Not Be Visible  ${First_Timeline_Second_Year}
     Compare Text  ${First_Timeline_Third_Year}  1978
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 Post-conditions
     Perform Post Conditions  2

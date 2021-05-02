@@ -18,11 +18,13 @@ TC_M001
     Wait Until Element Is Visible  ${Cross_Icon}
     Element Should Be Visible  ${Cross_Icon}
     Element Attribute Value Should Be  ${Search_Box_Input}  placeholder  I'm looking for
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_M002
     Mouse Over And Click  ${Cross_Icon}
     Wait Until Element Is Visible  ${Magnifier_Icon}
     Element Should Not Be Visible  ${Cross_Icon}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_M003
     Mouse Over And Click  ${Magnifier_Icon}
@@ -31,7 +33,7 @@ TC_M003
     Element Should Be Visible  ${Autocomplete_Item}
     Clear Element Text  ${Search_Box_Input}
     Mouse Over And Click  ${Cross_Icon}
-
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_M004
     Mouse Over And Click  ${Magnifier_Icon}
@@ -41,6 +43,7 @@ TC_M004
     Element Should Not Be Visible  ${Autocomplete_Item}
     Clear Element Text  ${Search_Box_Input}
     Mouse Over And Click  ${Cross_Icon}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_M005
     Element Should Be Visible  ${Bike_Menu_Option}
@@ -50,6 +53,7 @@ TC_M005
     Mouse Over  ${Img_Scott_Logo}
     Sleep  1
     Element Should Not Be Visible  ${Bike_Sub_Menu_Bikes_Link}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 Post-conditions
     Perform Post Conditions  2

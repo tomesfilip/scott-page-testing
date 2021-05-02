@@ -28,6 +28,7 @@ TC_CF001 - Contact Layout
     Scroll Element Into View  ${Button_Submit_Contact_Form}
     Element Should Be Disabled  ${Button_Submit_Contact_Form}
     Mouse Over And Click  ${Label_Privacy_Policy}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Reload Page
 
 TC_CF003 - Form Submit Without Gender
@@ -41,6 +42,7 @@ TC_CF003 - Form Submit Without Gender
     Wait Until Element Is Visible  ${Img_Scott_Logo}
     Check Styling  ${Select_Gender}  border  1px solid rgb(255, 64, 80)
     Compare Text  ${Error_Message}  Select your gender
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Go To  ${URL_Scott_Contact}
 
 TC_CF004 - Form Submit Big File Size
@@ -53,6 +55,7 @@ TC_CF004 - Form Submit Big File Size
     Mouse Over And Click  ${Button_Submit_Contact_Form}
     Compare Text  ${Help_Block}  Max file size 2Mb
     Check Styling  ${Help_Block}  color  rgba(169, 68, 66, 1)
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Go To  ${URL_Scott_Contact}
 
 TC_CF006 - Form Submit Valid
@@ -64,6 +67,7 @@ TC_CF006 - Form Submit Valid
     Mouse Over And Click  ${Label_Privacy_Policy}
     Mouse Over And Click  ${Button_Submit_Contact_Form}
     Compare Text  ${Headline_Contact_Form}  THANK YOU FOR CONTACTING US
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 Post-conditions
     Perform Post Conditions  2

@@ -7,6 +7,10 @@ Set Pre Conditions
     Maximize Browser Window
     Wait Until Element Is Visible  ${Element}
 
+Capture Page Screenshot On Failure
+    Capture Page Screenshot  Screenshots/${TEST_NAME}_FAIL.png
+
+
 Mouse Over And Click
     [Arguments]  ${Element}
     Element Should Be Visible  ${Element}

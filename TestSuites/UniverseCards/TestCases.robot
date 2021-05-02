@@ -16,9 +16,11 @@ TC_UC001 - Hovering Over Universe Card
     Wait Until Element Is Visible  ${Headline_Universe}
     Scroll Element Into View  ${Headline_Universe}
     Check Hover Styling  ${Img_Bike_Universe_Card}  ${Headline_Universe}  filter  brightness(0.5)
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_UCOO2 - Functional Link Winter Card
     Click Link And Check URL  ${Link_Wintersports_Universe_Card}  ${URL_Scott_Wintersports}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 Post-conditions
     Perform Post Conditions  2

@@ -19,6 +19,7 @@ TC_PM001 - Bike Manuals Link
     @{titles}=  Get Window Titles
     ${second_title}=  Get From List  ${titles}  1
     Should Be Equal As Strings  ${second_title}  Bike Manuals | SCOTT Bike
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_PM004 - Bike Manuals Category Options
     Select Frame  ${Frame_Bike_Manuals_SCOTT}
@@ -32,6 +33,7 @@ TC_PM004 - Bike Manuals Category Options
     Compare Text  ${Text_Empty_Message}  NO MATCHING ASSETS.
     Compare Text  ${Filter_Bubble}  Images
     Element Should Be Visible  ${Icon_Cancel}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Reload Page
 
 
@@ -49,6 +51,7 @@ TC_PM005 - Bike Manuals Category Options Search
     ${file_category_count}=  Get Element Count  ${Options_File_Category}
     Should Be True  ${file_category_count}==1
     Compare Text  ${Option_File_Category_First}  Documents
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Reload Page
 
 TC_PM006 - Bike Manuals Menu
@@ -60,6 +63,7 @@ TC_PM006 - Bike Manuals Menu
     ${PDF_count}=  Get Element Count  ${List_PDF_Items}
     Should Be True  ${PDF_count}==6
     Compare Text  ${Text_PDF_Name}  spark_Manual_A5_2018_BIKE_SCOTT-Sports_EN.pdf
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 Post-conditions
     Perform Post Conditions  2

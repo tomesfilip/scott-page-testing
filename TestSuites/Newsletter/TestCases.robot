@@ -22,12 +22,14 @@ TC_N001 - Subscribe With Invalid Email
     ${actual_url}=  Get Location
     Should Not Be Equal  ${actual_url}  ${URL_Scott_Newsletter}
     Clear Element Text  ${Input_Email_Newsletter_Footer}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_N002 - Subscribe Without Email
     Element Should Be Visible  ${Span_Sign_Up_Newsletter_Footer}
     Click Link And Check URL  ${Button_Submit_Newsletter_Footer}  ${URL_Scott_Newsletter}
     Compare Text  ${Headline_Newsletter}  NEWSLETTER
     Click Link And Check URL  ${Img_Scott_Logo}  ${URL_Scott_Main}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_N003 - Subscribe With Valid Email
     Scroll Element Into View  ${Span_Sign_Up_Newsletter_Footer}
@@ -36,12 +38,14 @@ TC_N003 - Subscribe With Valid Email
     Compare Text  ${Headline_Newsletter}  NEWSLETTER
     Compare Input Text  ${Input_Email_Newsletter}  validmail@gmail.com
     Clear Element Text  ${Input_Email_Newsletter}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_N004 - Newsletter Select Title
     Mouse Over And Click  ${Select_Title_Newsletter}
     ${title_options_count}=  Get Element Count  ${Options_Title_Newsletter}
     Should Be True  ${title_options_count} == 3
     Select Value From List And Verify  ${Select_Title_Newsletter}  other
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_N005 - Newsletter Select Country Uniqueness
     Element Should Be Visible  ${Select_Country_Newsletter}
@@ -49,6 +53,7 @@ TC_N005 - Newsletter Select Country Uniqueness
     @{country_options}=  Get List Items  ${Select_Country_Newsletter}
     # failing due to two abbrevations for Serbia
     List Should Not Contain Duplicates  ${country_options}
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_N008 - Newsletter Submit Form With Invalid Mail
     Type Text To Input  ${Input_Email_Newsletter}  johnsmith@gmail.!
@@ -60,6 +65,7 @@ TC_N008 - Newsletter Submit Form With Invalid Mail
     Mouse Over And Click  ${Button_Subscribe_Newsletter}
     Wait Until Element Is Visible  ${Error_Newsletter}
     Compare Text  ${Error_Newsletter}  Email is invalid
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Reload Page
 
 TC_N009 - Submit Form Without reCAPTCHA Validation
@@ -72,6 +78,7 @@ TC_N009 - Submit Form Without reCAPTCHA Validation
     Mouse Over And Click  ${Button_Subscribe_Newsletter}
     Wait Until Element Is Visible  ${Error_Newsletter}
     Compare Text  ${Error_Newsletter}  Captcha not verified
+    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 Post-conditions
     Perform Post Conditions  2
