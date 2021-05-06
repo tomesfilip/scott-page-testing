@@ -8,9 +8,9 @@ Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/Cookies.robot
 Resource  ../../Variables/History.robot
 
-*** Test Cases ***
-Pre-conditions
-    Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_History}  ${Img_Scott_Logo}
+Suite Setup  Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_History}  ${Img_Scott_Logo}
+Suite Teardown  Perform Post Conditions  2
+Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 *** Test Cases ***
 
@@ -25,7 +25,3 @@ TC_Hi002 - Timeline Arrow
     Element Should Not Be Visible  ${First_Timeline_First_Year}
     Element Should Not Be Visible  ${First_Timeline_Second_Year}
     Compare Text  ${First_Timeline_Third_Year}  1978
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
-
-Post-conditions
-    Perform Post Conditions  2

@@ -8,9 +8,9 @@ Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/Cookies.robot
 Resource  ../../Variables/TrailBikesProducts.robot
 
-*** Test Cases ***
-Pre-conditions
-    Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Trail_Bikes_Products}  ${Img_Scott_Logo}
+Suite Setup  Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Trail_Bikes_Products}  ${Img_Scott_Logo}
+Suite Teardown  Perform Post Conditions  2
+Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 *** Test Cases ***
 
@@ -31,7 +31,6 @@ TC_TBP001 - Filer By Model
     Compare Text  ${Headline_First_Product_Label}  SCOTT CONTESSA GENIUS 910 BIKE
     Compare Text  ${Headline_Second_Product_Label}  SCOTT CONTESSA GENIUS 920 BIKE
     Mouse Over And Click  ${Link_Clear_All_Filters}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_TBP002 - Multiple Filters
     Mouse Over And Click  ${Button_More_Filters}
@@ -48,7 +47,6 @@ TC_TBP002 - Multiple Filters
     ${visible_products_count}=  Get Element Count  ${Headlines_Product_Label}
     Compare Text  ${Total_Results}  ${visible_products_count} Products
     Mouse Over And Click  ${Link_Clear_All_Filters}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_TBP003 - Products Per Page
     Wait Until Element Is Visible  ${Img_Scott_Logo}
@@ -63,7 +61,6 @@ TC_TBP003 - Products Per Page
     Compare Text  ${Current_Page}  1
     Compare Text  ${Total_Pages}  6
     Mouse Over And Click  ${Link_Clear_All_Filters}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_TBP004 - Products Quickview
     Wait Until Element Is Visible  ${Img_Scott_Logo}
@@ -82,7 +79,3 @@ TC_TBP004 - Products Quickview
     Compare Text  ${Button_Size_M}  M
     Compare Text  ${Button_Size_L}  L
     Compare Text  ${Button_Size_XL}  XL
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
-
-Post-conditions
-    Perform Post Conditions  2

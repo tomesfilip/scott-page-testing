@@ -7,9 +7,9 @@ Resource  ../../Config/Browsers.robot
 Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/MainSlider.robot
 
-*** Test Cases ***
-Pre-conditions
-    Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Main_Slider}
+Suite Setup  Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Main_Slider}
+Suite Teardown  Perform Post Conditions  2
+Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 *** Test Cases ***
 TC_MS001 - Slider Next Arrow
@@ -28,7 +28,6 @@ TC_MS001 - Slider Next Arrow
     Should Be Equal  ${dot_second}  owl-dot active
     Should Not Be Equal  ${dot_first}  owl-dot active
     Should Not Be Equal  ${curr_img_src}  ${next_img_src}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Reload Page
 
 # randomly failing to find ${Img_Slider_Active} element which was found in first TC
@@ -48,7 +47,6 @@ TC_MS002 - Slider Prev Arrow
     Should Be Equal  ${dot_fourth}  owl-dot active
     Should Not Be Equal  ${dot_first}  owl-dot active
     Should Not Be Equal  ${curr_img_src}  ${next_img_src}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 # failing to find ${Headline_Active_Item}
 TC_MS003 - Slider Dots
@@ -61,7 +59,3 @@ TC_MS003 - Slider Dots
     Should Not Be Equal  ${active_item_headline}  ${next_active_item_headline}
     ${dot_third}=  Get ELement Attribute  ${Dot_Slider_Third}  class
     Should Be Equal  ${dot_third}  owl-dot active
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
-
-Post-conditions
-    Perform Post Conditions  2

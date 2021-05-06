@@ -7,9 +7,9 @@ Resource  ../../Config/Browsers.robot
 Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/Location.robot
 
-*** Test Cases ***
-Pre-conditions
-    Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Img_Scott_Logo}
+Suite Setup  Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Main}  ${Img_Scott_Logo}
+Suite Teardown  Perform Post Conditions  2
+Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 *** Test Cases ***
 TC_L001 - Change Continent Tabs
@@ -22,14 +22,9 @@ TC_L001 - Change Continent Tabs
     ${count}=  Get Element Count  ${Links_Visible_Countries}
     Should Be True  ${count}==4
     Compare Text  ${Link_First_Visible_Contry}  China
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
     Reload Page
 
 TC_L002 - Change Page Localization
     Wait Until Element Is Visible  ${Country_Headline}
     Compare Text  ${Selected_Tab}  EUROPE
     Click Link And Check URL  ${Link_Country_Czech}  ${URL_Scott_Czech}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
-
-Post-conditions
-    Perform Post Conditions  2

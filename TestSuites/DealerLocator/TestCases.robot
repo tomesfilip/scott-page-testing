@@ -8,9 +8,9 @@ Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/DealerLocator.robot
 Resource  ../../ExpectedResults/DealerLocator.robot
 
-*** Test Cases ***
-Pre-conditions
-    Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Dealer_Locator}  ${Img_Scott_Logo}
+Suite Setup  Set Pre Conditions  0.2  ${ChromeBrowser}  ${URL_Scott_Dealer_Locator}  ${Img_Scott_Logo}
+Suite Teardown  Perform Post Conditions  2
+Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 *** Test Cases ***
 TC_DL002 - Dealer Locator Select Category
@@ -23,7 +23,6 @@ TC_DL002 - Dealer Locator Select Category
     Element Should Be Visible  ${Select_Radius}
     Element Should Be Visible  ${Option_Km}
     Element Should Be Visible  ${Option_Mi}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 TC_DL003 - Dealer Locator Location Form
     Element Should Be Disabled  ${Button_Form_Submit}
@@ -43,7 +42,3 @@ TC_DL003 - Dealer Locator Location Form
     Mouse Over  ${Button_Form_Submit}
     Execute Javascript  document.getElementById("submitButton").click()
     Wait Until Element Is Visible  ${Canvas_Map}
-    Capture Page Screenshot  Screenshots/${TEST_NAME}.png
-
-Post-conditions
-    Perform Post Conditions  2
