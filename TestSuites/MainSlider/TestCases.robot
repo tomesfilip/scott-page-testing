@@ -32,7 +32,7 @@ TC_MS001 - Slider Next Arrow
     Reload Page
 
 # randomly failing to find ${Img_Slider_Active} element which was found in first TC
-TC_MSOO2 - Slider Prev Arrow
+TC_MS002 - Slider Prev Arrow
     Wait Until Element Is Visible  ${Main_Slider}
     Element Should Be Visible  ${Slider_Prev_Arrow}
     ${curr_img_src}=  Get Element Attribute  ${Img_Slider_Active}  src

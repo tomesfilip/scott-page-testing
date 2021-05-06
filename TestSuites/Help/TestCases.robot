@@ -19,7 +19,7 @@ TC_H001 - Open Help Sub Page
     Compare Text  ${Headline_Help}  HOW CAN WE HELP YOU?
     Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
-TC_HOO2 - Test Whisperer Valid Phrase
+TC_H002 - Test Whisperer Valid Phrase
     Type Text To Input  ${Input_Search_Box}  how
     Wait Until Element Is Visible  ${Auto_Complete}
     Element Should Be Visible  ${Auto_Complete_Option}
