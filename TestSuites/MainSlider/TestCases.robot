@@ -1,9 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
-Library  SeleniumLibrary  run_on_failure=Nothing
-Resource  ../../Keywords.robot
-Resource  ../../URLs.robot
-Resource  ../../Config/Browsers.robot
+Resource  ../../Config/BaseSettings.robot
 Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/MainSlider.robot
 

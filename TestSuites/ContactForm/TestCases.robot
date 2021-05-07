@@ -1,10 +1,6 @@
 *** Settings ***
-Library  SeleniumLibrary
+Resource  ../../Config/BaseSettings.robot
 Library  Collections
-Library  SeleniumLibrary  run_on_failure=Nothing
-Resource  ../../Keywords.robot
-Resource  ../../URLs.robot
-Resource  ../../Config/Browsers.robot
 Resource  ../../Variables/MainPage.robot
 Resource  ../../Variables/Cookies.robot
 Resource  ../../Variables/ContactForm.robot
