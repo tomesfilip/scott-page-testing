@@ -8,19 +8,18 @@ Suite Teardown  Perform Post Conditions  2
 Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 
 *** Test Cases ***
-TC_M001
+TC_M001 - Show Search Field
     Wait Until Element Is Visible  ${Menu_Search_Box_Submit}
     Mouse Over And Click  ${Magnifier_Icon}
     Wait Until Element Is Visible  ${Cross_Icon}
-    Element Should Be Visible  ${Cross_Icon}
     Element Attribute Value Should Be  ${Search_Box_Input}  placeholder  I'm looking for
 
-TC_M002
+TC_M002 - Close Search Field
     Mouse Over And Click  ${Cross_Icon}
     Wait Until Element Is Visible  ${Magnifier_Icon}
     Element Should Not Be Visible  ${Cross_Icon}
 
-TC_M003
+TC_M003 - Whisperer Valid Search Field
     Mouse Over And Click  ${Magnifier_Icon}
     Input Text  ${Search_Box_Input}  glo
     Wait Until Element Is Visible  ${Autocomplete_Dropdown}
@@ -28,7 +27,7 @@ TC_M003
     Clear Element Text  ${Search_Box_Input}
     Mouse Over And Click  ${Cross_Icon}
 
-TC_M004
+TC_M004 - Whisperer Invalid Search Field
     Mouse Over And Click  ${Magnifier_Icon}
     Input Text  ${Search_Box_Input}  olg
     Sleep  2
@@ -37,7 +36,7 @@ TC_M004
     Clear Element Text  ${Search_Box_Input}
     Mouse Over And Click  ${Cross_Icon}
 
-TC_M005
+TC_M005 - Bike Option
     Element Should Be Visible  ${Bike_Menu_Option}
     Mouse Over  ${Bike_Menu_Option}
     Wait Until Element Is Visible  ${Bike_Sub_Menu_Bikes_Link}
