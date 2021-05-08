@@ -5,6 +5,7 @@ ${Headline_Category_Bike}  //div[1]/h6
 ${Headline_Category_Wintersports}  //div[2]/h6
 ${Headline_Category_Running}  //div[3]/h6
 ${Headline_Category_Motorsports}  //div[4]/h6
+${Card_Category_Active}  //div[contains(@class, "active-icon")]
 ${Button_Form_Submit}  //button[@id="submitButton"]
 ${Link_Show_Location}  //a[@ng-click="showlocation()"]
 ${Input_Define_Location}  //input[@aria-label="Define a location"]

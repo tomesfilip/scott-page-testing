@@ -12,6 +12,7 @@ Test Teardown  Capture Page Screenshot  Screenshots/${TEST_NAME}.png
 TC_DL002 - Dealer Locator Select Category
     Compare Text  ${Headline_Category_Running}  RUNNING
     Mouse Over And Click  ${Headline_Category_Running}
+    Check Styling  ${Card_Category_Active}  border  1px solid rgb(0, 153, 255)
     Wait Until Element Is Visible  ${Button_Form_Submit}
     Compare Text  ${Button_Form_Submit}  FIND DEALERS
     Element Should Be Visible  ${Link_Show_Location}

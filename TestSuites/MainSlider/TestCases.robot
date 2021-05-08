@@ -26,7 +26,7 @@ TC_MS001 - Slider Next Arrow
     Should Not Be Equal  ${curr_img_src}  ${next_img_src}
     Reload Page
 
-# randomly failing to find ${Img_Slider_Active} element which was found in first TC
+# randomly failing to find the ${Img_Slider_Active} element which was found in the first TC
 TC_MS002 - Slider Prev Arrow
     Wait Until Element Is Visible  ${Main_Slider}
     Element Should Be Visible  ${Slider_Prev_Arrow}
